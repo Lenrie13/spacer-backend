@@ -14,9 +14,9 @@ from flask_migrate import Migrate
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://vimbegood:12345@localhost/spacer4"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://vimbegood:12345@localhost/spacer7"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SECRET_KEY"] = "your-secret-key"  # Change this to a secure secret key
+app.config["SECRET_KEY"] = "your-secret-key"  
 
 
 UPLOAD_FOLDER = "static/profile_pictures"
