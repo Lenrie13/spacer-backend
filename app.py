@@ -372,7 +372,7 @@ def get_spaces():
                         "images": [
                             {
                                 "image_id": str(img.image_id),
-                                "url": f"/static/space_images/{img.image_filename}",
+                                "url": f"{'https://' if request.is_secure else 'http://'}{request.host}/static/space_images/{img.image_filename}",
                             }
                             for img in space.images
                         ],
@@ -1012,7 +1012,7 @@ def admin_get_spaces(current_user):
                         "images": [
                             {
                                 "image_id": str(img.image_id),
-                                "url": f"/static/space_images/{img.image_filename}",
+                                "url": f"{'https://' if request.is_secure else 'http://'}{request.host}/static/space_images/{img.image_filename}",
                             }
                             for img in space.images
                         ],
