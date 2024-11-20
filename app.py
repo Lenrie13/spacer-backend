@@ -676,6 +676,7 @@ def admin_get_bookings(current_user):
 
         # Get all bookings with filters applied
         bookings = query.order_by(Booking.created_at.desc()).all()
+        print("The number of bookings are=---------->", len(bookings))
 
         return jsonify(
             {
@@ -716,7 +717,7 @@ def admin_get_bookings(current_user):
                             for payment in booking.payments
                         ],
                     }
-                    for booking in bookings
+                    for booking in bookings if booking.space_id
                 ]
             }
         )
